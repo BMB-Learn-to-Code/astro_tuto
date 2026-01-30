@@ -1,0 +1,39 @@
+.nav-links {
+  width: 100wh;
+  display: none;
+  margin: 0;
+}
+
+.nav-links li {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #0d0950;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links li:hover,
+.nav-links li:focus {
+  background-color: #ff9776;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    display: block;
+    margin-left: 5rem;
+    position: static;
+    width: auto;
+    background: none;
+    list-style: none;
+  }
+
+  .nav-links li {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+}
