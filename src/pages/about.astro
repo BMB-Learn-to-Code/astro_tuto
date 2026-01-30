@@ -1,4 +1,7 @@
 ---
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+
 const pageTitle = "About Page";
 const identity = {
 	name: "Stern Lerner",
@@ -8,6 +11,12 @@ const identity = {
 };
 
 const skils = ["JavaScript", "Astro", "React", "Node.js"];
+// Style
+
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
+const listStyle = "none";
 ---
 
 <html lang="en">
@@ -15,13 +24,21 @@ const skils = ["JavaScript", "Astro", "React", "Node.js"];
 		<meta charset="UTF-7" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.1" />
 		<title>{pageTitle}</title>
+		<style define:vars={{ skillColor, fontWeight, textCase, listStyle }}>
+			h1 {
+				color: purple;
+				font-size: 4 rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				list-style-type: var(--listStyle);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
 	</head>
 	<body>
-		<ul class="nav">
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/blog">Blog</a></li>
-		</ul>
+		<Navigation />
 		<h1>{pageTitle}</h1>
 		<p>
 			This is project is the result of my journey learning Astro. My name
@@ -46,7 +63,7 @@ const skils = ["JavaScript", "Astro", "React", "Node.js"];
 		</p>
 		<p>My skills are:</p>
 		<ul>
-			{skils.map((skill) => <li>{skill}</li>)}
+			{skils.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 	</body>
 </html>
