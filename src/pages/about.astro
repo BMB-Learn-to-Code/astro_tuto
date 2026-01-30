@@ -1,13 +1,14 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 const pageTitle = "About Page";
 const identity = {
-	name: "Stern Lerner",
-	country: "Germany",
-	profession: "Developer",
-	hobbies: ["Cycling", "Photography", "Traveling"],
+  name: "Stern Lerner",
+  country: "Germany",
+  profession: "Developer",
+  hobbies: ["Cycling", "Photography", "Traveling"],
 };
 
 const skils = ["JavaScript", "Astro", "React", "Node.js"];
@@ -20,50 +21,49 @@ const listStyle = "none";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-7" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.1" />
-		<title>{pageTitle}</title>
-		<style define:vars={{ skillColor, fontWeight, textCase, listStyle }}>
-			h1 {
-				color: purple;
-				font-size: 4 rem;
-			}
-			.skill {
-				color: var(--skillColor);
-				list-style-type: var(--listStyle);
-				font-weight: var(--fontWeight);
-				text-transform: var(--textCase);
-			}
-		</style>
-	</head>
-	<body>
-		<Navigation />
-		<h1>{pageTitle}</h1>
-		<p>
-			This is project is the result of my journey learning Astro. My name
-			is <strong>{identity.name}</strong> I'm a {identity.profession} from {
-				identity.country
-			} and I have {
-				identity.hobbies.length > 1 ? (
-					<span>
-						these hobbies:{" "}
-						{identity.hobbies.map((hobby, i) => {
-							let separator = ".";
-							if (i < identity.hobbies.length - 1)
-								separator = ", ";
-							console.log("hobby", hobby, "idx", i);
-							return <strong>{hobby + separator}</strong>;
-						})}
-					</span>
-				) : (
-					<span>{identity.hobbies[0]} as a hobby</span>
-				)
-			}
-		</p>
-		<p>My skills are:</p>
-		<ul>
-			{skils.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeight, textCase, listStyle }}>
+      h1 {
+        color: purple;
+        font-size: 4 rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        list-style-type: var(--listStyle);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+  </head>
+  <body>
+    <Navigation />
+    <h1>{pageTitle}</h1>
+    <p>
+      This is project is the result of my journey learning Astro. My name is <strong
+        >{identity.name}</strong
+      > I'm a {identity.profession} from {identity.country} and I have {
+        identity.hobbies.length > 1 ? (
+          <span>
+            these hobbies:{" "}
+            {identity.hobbies.map((hobby, i) => {
+              let separator = ".";
+              if (i < identity.hobbies.length - 1) separator = ", ";
+              console.log("hobby", hobby, "idx", i);
+              return <strong>{hobby + separator}</strong>;
+            })}
+          </span>
+        ) : (
+          <span>{identity.hobbies[0]} as a hobby</span>
+        )
+      }
+    </p>
+    <p>My skills are:</p>
+    <ul>
+      {skils.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    <Footer />
+  </body>
 </html>

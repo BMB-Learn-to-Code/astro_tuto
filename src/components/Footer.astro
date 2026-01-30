@@ -1,0 +1,27 @@
+---
+import SocialMedia from "../components/SocialMedia.astro";
+---
+
+<style>
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+  }
+  footer p {
+    margin: 0.5rem 0;
+  }
+</style>
+
+<footer>
+  <p>
+    <SocialMedia platform="github" user="withastro" />
+    <SocialMedia platform="x" user="astrodotbuild" />
+    <SocialMedia platform="youtube" user="astrodotbuild" />
+  </p>
+  <p>
+    Copyright (c) 2026 Astro Project. All rights reserved. Built with ❤️ by
+    Astro.
+  </p>
+</footer>
