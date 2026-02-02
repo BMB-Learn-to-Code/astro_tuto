@@ -1,9 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greetings from "../components/Greetings";
 import "../styles/global.css";
 const pageTitle = "My First Astro Project";
+
+const messages = ["Hi", "Ellow", "G'day", "Moin"];
 ---
 
 <BaseLayout {pageTitle}>
 	<h1>{pageTitle}</h1>
+	<Greetings client:load messages={messages} />
 </BaseLayout>
