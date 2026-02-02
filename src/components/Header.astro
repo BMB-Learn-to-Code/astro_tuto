@@ -1,15 +1,28 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import Menu from "../components/Menu.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
 import "../styles/navigation.css";
 ---
 
 <style>
-  header {
-    background-color: lightblue;
-  }
+	header {
+		background-color: lightblue;
+	}
 </style>
 <header id="main-menu">
-  <Menu />
-  <Navigation />
+	<nav>
+		<div>
+			<ThemeIcon />
+			<Menu />
+		</div>
+	</nav>
+	<Navigation />
 </header>
+
+<style>
+	div {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>
