@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Forth and still counting 
 author: Stern Lerner 
 description: "Lerning more every day"
